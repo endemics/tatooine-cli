@@ -61,7 +61,7 @@ getTokenRequest pd req authToken =
       path = path req `combinePathSafe` encodePathSegmentsBS (toPath pd)
     , requestHeaders = [  (hAccept, "application/vnd.ambiata.v1+json")
                         , tokenHeader authToken ]
-    , method = methodPost
+    , method = methodGet
   }
   where
     toPath Upload = ["upload", "s3"]
